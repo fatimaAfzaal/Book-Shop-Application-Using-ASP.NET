@@ -1,0 +1,56 @@
+﻿@model BookShopApplication.Models.Book
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3 style="color:purple">Delete Book</h3>
+
+<h4>Are you sure you want to delete this?</h4>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TitleOfBooks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitleOfBooks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Authors)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Authors)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublicationYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublicationYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to books collection", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<BookShopApplication.Models.Book>
+
+@{
+    ViewBag.Title = "Collection";
+}
+
+<style>
+    tr:nth-child(even) {
+        background-color: white
+    }
+    tr:hover {
+        background-color: lightpink;
+    }
+    th {
+        color: palevioletred;
+        font-size:15px;
+    }
+</style>
+<h2 style="color:purple">Collection</h2>
+
+<p>
+    @Html.ActionLink("Add New Book", "Create")
+</p>
+<table class="table" >
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TitleOfBooks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Authors)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicationYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr >
+        <td>
+            @Html.DisplayFor(modelItem => item.TitleOfBooks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Authors)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicationYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit book details", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Check details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete book", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

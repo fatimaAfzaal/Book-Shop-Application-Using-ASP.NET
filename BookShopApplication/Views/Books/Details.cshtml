@@ -1,0 +1,50 @@
+﻿@model BookShopApplication.Models.Book
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3 style="color:purple">Details</h3>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TitleOfBooks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitleOfBooks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Authors)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Authors)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublicationYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublicationYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to books collection", "Index")
+</p>
